@@ -1,0 +1,231 @@
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%; /* 1 rem= 10px*/
+}
+
+body{
+    font-size: 2rem;
+    font-family: 'Lato', sans-serif;
+    height: 60rem;
+}
+
+.nav{
+    background: #20508b;
+    display: flex;  /* alles komt naast elkaar*/
+    justify-content: space-between; /* alles gaat naar een verschillende plek*/
+    height: 10rem;
+    align-items: center; /* alles in de nav komt in het midden te staan*/
+    color: #eee;
+    font-size: 130%;
+    padding: 4rem; /* alles heeft dan 40px afstand*/
+    text-transform: uppercase;
+}
+
+
+.bg {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: 300% 300%;
+    background-image: linear-gradient(-45deg, rgb(42, 39, 100) 0%, rgb(103, 126, 203) 25%, rgb(24, 48, 118) 51%, #34165c 100%);
+    -webkit-animation: AnimateBG 20s ease infinite;
+            animation: AnimateBG 20s ease infinite;
+  }
+  
+  @-webkit-keyframes AnimateBG {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  @keyframes AnimateBG {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+.nav > a > img{
+   height: 8rem;
+}
+
+.my-image{
+    height: 3rem;
+    width: 20rem;
+}
+
+.list{
+    display: flex;
+    list-style: none; /* styling weg*/
+    gap: 4rem;
+}
+
+.listitem{
+    padding-left: 50rem;
+}
+
+.alletekst{
+    margin-bottom: 2rem;
+    width: 50rem;
+    margin-left: 2rem;
+}
+
+
+.cta{
+    width: 2rem;
+    height: 2rem;
+    padding: 1rem;
+    font-size: 80%;
+}
+
+
+.cta:hover{
+    cursor: pointer; 
+    background: hsl(350, 70%, 49%);
+    transition: 0.2s;
+}
+
+.banner{
+    width: 100vw;
+    position: relative;
+}
+
+.banner > img{
+    height: 55rem;
+    width: 100%;
+    object-fit: cover;
+    object-position: bottom;
+}
+
+.banner > div{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: center;
+
+}
+
+.heading{
+    color: #eee;
+    margin-bottom: 1rem;
+    margin-left: 12rem;
+}
+
+.heading2{
+    font-size: small;
+    flex-direction: column;
+    color: #eee;
+    text-align: center;
+}
+
+.grotebutton{
+    width: 100%;
+    height: 18rem;
+    padding: 1rem;
+    font-size: 80%;
+    background: #20508b;
+    border: none;
+    color: #eee;
+    border-radius: 4rem;
+    text-transform: uppercase;
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+.onzesdgs{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+        background-size: 300% 300%;
+        background-image: linear-gradient(-45deg, rgb(103, 95, 255) 0%, rgb(103, 126, 203) 25%, rgb(182, 200, 255) 51%, #1473f9 100%);
+        -webkit-animation: AnimateBG 20s ease infinite;
+                animation: AnimateBG 20s ease infinite;
+      }
+      
+      @-webkit-keyframes AnimateBG {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+      
+      @keyframes AnimateBG {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .sdgtekst {
+        color: white;
+        font-size: 2rem;
+        text-align: center;
+      }
+    
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 2rem; 
+      }
+    
+      .block {
+        width: 20rem;
+        height: 17rem;
+        background-color: blue;
+        margin: 1rem;
+        transition: transform 0.3s ease;
+      }
+      
+      .block:hover{
+        transform: scale(1.05);
+      }
+
+
+footer{
+    height: 15rem;
+    background: #20508b;
+    font-size: small;
+    color: #eee;
+
+}
+
+footer > img{
+    height: 8rem;
+    width: 8rem;
+}
