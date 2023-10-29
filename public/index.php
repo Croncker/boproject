@@ -8,42 +8,56 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/704f604c3d.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<nav class="nav">
-        <a href=""><img src="img/sdglogo.png" alt=""></a> 
-            <ul class="list">
-                <li class="listitem">Over NVVN</li>
-            </ul>
-        </a>
-        </nav>
+    <nav class="nav">
+        <a href="index.php"><img src="img/logo.png" alt=""></a> 
+    </nav>
+
     <section class="onzesdgs">
         <div class="sdgtekst">SDG's</div>
         <div id="results">
             <?php
-            // Inclusief het singles.php-document om gegevens op te halen
             include 'data.php';
+            $selectedIndexes = array();
+        
+            while (count($selectedIndexes) < 3) {
+                $randomIndex = array_rand($sdgs);
+                if (!in_array($randomIndex, $selectedIndexes)) {
+                    $selectedIndexes[] = $randomIndex;
+                }
+            }
             
-
-            foreach ($musicSingles as $index => $single) {
+            foreach ($selectedIndexes as $index) {
+                $single = $sdgs[$index];
                 echo '<a href="detail.php?id=' . $index . '">';
                 include '../views/card.php';
                 echo '</a>';
             }
             ?>
         </div>
-    </section>
-    <section>
-            <div class="bg">
-            <div class="alletekst">
-                <h1 class="heading">  <img src="" class="logo-image" > Welkom bij SDG Game!</h1>
-                <h2 class="heading2">De SDG-game is een online spel over de 17 duurzame ontwikkelingsdoelen. Dit online spel daagt studenten uit zich te verdiepen in de SDG’s en om challenges uit te voeren zodat zij kennis maken met alle SDG’s volgens de Nederlandse maatstaven.</h2>
-                <a href="http://sdggame.nl/"><button class="grotebutton">Speel nu!</button></a>
-            </div>
-        </div>
+        <div class="curve"></div>
     </section>
 
+    <section class="game">
+        <div class="gametekst">
+            <h1 class="gameh1">Welkom bij SDG Game!</h1>
+            <h2 class="gameh2">De SDG-game is een boeiend online spel dat draait om de 17 duurzame ontwikkelingsdoelen (SDG's). Dit interactieve spel stimuleert studenten om dieper in de SDG's te duiken en uitdagende missies aan te gaan. Hierdoor verwerven ze uitgebreide kennis over elk van de SDG's, geheel in lijn met de Nederlandse normen en waarden voor duurzaamheid.</h2>
+        </div>
+        <div class="loader">
+            <a href="http://sdggame.nl/"><button class="grotebutton">Speel nu!</button></a>
+        </div>
+        <div class="curvegame"></div>
+    </section>
+
+    <section class="information">
+        <img class="image2" src="img/logosdg.jpg" alt="">
+        <div class="informationtekst">
+            <h1 class="informationh1">Wat is een SDG?</h1>
+            <h2 class="informationh2">Een SDG, of Duurzame Ontwikkelingsdoel, is een van de 17 wereldwijde doelen die zijn vastgesteld door de Verenigde Naties als onderdeel van de Agenda 2030 voor Duurzame Ontwikkeling. Deze doelen zijn ontworpen om enkele van 's werelds meest urgente problemen aan te pakken, waaronder armoede, ongelijkheid, klimaatverandering en milieuvervuiling. Elk SDG richt zich op specifieke kwesties en heeft tot doel de wereld tot 2030 aanzienlijk te verbeteren. De SDG's fungeren als een kompas voor overheden, organisaties en individuen om actie te ondernemen en bij te dragen aan een betere toekomst voor onze planeet en haar bewoners. Ze vertegenwoordigen een universele oproep tot actie en samenwerking om een duurzamere en rechtvaardigere wereld te bereiken.</h2>
+        </div>
+    </section>
 
 </body>
 <footer id="footer" class="footer">

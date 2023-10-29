@@ -1,0 +1,95 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  /* 1 rem= 10px*/
+}
+
+body {
+  font-size: 2rem;
+  font-family: 'Lato', sans-serif;
+  height: 120rem;
+}
+
+.nav {
+  background: #ededed;
+  display: flex;
+  /* alles komt naast elkaar*/
+  justify-content: space-between;
+  /* alles gaat naar een verschillende plek*/
+  height: 10rem;
+  align-items: center;
+  /* alles in de nav komt in het midden te staan*/
+  color: #000000;
+  font-size: 130%;
+  padding: 4rem;
+  /* alles heeft dan 40px afstand*/
+  text-transform: uppercase;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+}
+
+.nav>a>img {
+  height: 8rem;
+}
+
+.my-image {
+  height: 3rem;
+  width: 20rem;
+}
+
+.list {
+  display: flex;
+  list-style: none;
+  /* styling weg*/
+  gap: 4rem;
+}
+
+.listitem {
+  padding-left: 50rem;
+}
+
+/* Adicione isso ao seu arquivo CSS para estilizar a página de detalhes */
+
+.sdg-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.sdg-image {
+    max-width: 50%;
+    margin-right: 20px;
+}
+
+.sdg-info {
+    max-width: 50%;
+}
+
+.sdg-title {
+    font-size: 24px;
+}
+
+.sdg-sub-image {
+    max-width: 100%;
+    margin-top: 20px;
+}
+
+.sdg-subtitle {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.sdg-description {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+/* Estilize a página de detalhes conforme suas necessidades */
+
