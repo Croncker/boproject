@@ -9,10 +9,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/704f604c3d.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
+    <script src="script.js"></script>
 </head>
 <body>
     <nav class="nav">
-        <a href="index.php"><img src="img/logo.png" alt=""></a> 
+        <a href="index.php"><img src="img/logo.webp" alt=""></a> 
     </nav>
 
     <section class="onzesdgs">
@@ -44,15 +45,14 @@
         <div class="gametekst">
             <h1 class="gameh1">Welkom bij SDG Game!</h1>
             <h2 class="gameh2">De SDG-game is een boeiend online spel dat draait om de 17 duurzame ontwikkelingsdoelen (SDG's). Dit interactieve spel stimuleert studenten om dieper in de SDG's te duiken en uitdagende missies aan te gaan. Hierdoor verwerven ze uitgebreide kennis over elk van de SDG's, geheel in lijn met de Nederlandse normen en waarden voor duurzaamheid.</h2>
-        </div>
-        <div class="loader">
             <a href="http://sdggame.nl/"><button class="grotebutton">Speel nu!</button></a>
         </div>
+        <div class="loader"></div>
         <div class="curvegame"></div>
     </section>
 
     <section class="information">
-        <img class="image2" src="img/logosdg.jpg" alt="">
+        <img class="image2" src="img/logosdg.webp" alt="">
         <div class="informationtekst">
             <h1 class="informationh1">Wat is een SDG?</h1>
             <h2 class="informationh2">Een SDG, of Duurzame Ontwikkelingsdoel, is een van de 17 wereldwijde doelen die zijn vastgesteld door de Verenigde Naties als onderdeel van de Agenda 2030 voor Duurzame Ontwikkeling. Deze doelen zijn ontworpen om enkele van 's werelds meest urgente problemen aan te pakken, waaronder armoede, ongelijkheid, klimaatverandering en milieuvervuiling. Elk SDG richt zich op specifieke kwesties en heeft tot doel de wereld tot 2030 aanzienlijk te verbeteren. De SDG's fungeren als een kompas voor overheden, organisaties en individuen om actie te ondernemen en bij te dragen aan een betere toekomst voor onze planeet en haar bewoners. Ze vertegenwoordigen een universele oproep tot actie en samenwerking om een duurzamere en rechtvaardigere wereld te bereiken.</h2>

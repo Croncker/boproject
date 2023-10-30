@@ -31,7 +31,8 @@ body {
 }
 
 .nav>a>img {
-  height: 8rem;
+  height: 40%;
+  width: 40%;
 }
 
 /*========================================SDG'S========================================*/
@@ -54,16 +55,16 @@ body {
 
 #results {
   max-width: 70%;
-  margin: 0 auto;
   background: #ededed;
   padding: 2rem;
   border-radius: 5rem;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* Permite que os singles quebrem para a próxima linha */
   justify-content: center;
   gap: 2rem;
-  height: 35rem;
+  height: auto; /* Remove a altura fixa para que o results cresça para baixo conforme necessário */
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+  z-index: 3;
 }
 
 .single {
@@ -130,12 +131,15 @@ body {
 }
 
 .gametekst {
-  margin: 5rem;
   width: 50rem;
   height: 30rem;
   padding: 2rem;
   background: hsl(118, 100%, 27%);
   border-radius: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .gameh1 {
@@ -164,12 +168,8 @@ body {
 }
 
 .grotebutton {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  width: 60%;
+  margin-top: 2rem;
+  width: 25rem;
   height: 7rem;
   padding: 1rem;
   font-size: 80%;
@@ -179,8 +179,6 @@ body {
   border-radius: 4rem;
   text-transform: uppercase;
   cursor: pointer;
-  opacity: 0;
-  transition: opacity 0.3s 0.3s;
 }
 
 .grotebutton:hover{
@@ -305,7 +303,7 @@ body {
   flex-direction: column;
   color: white;
   text-align: center;
-  font-size: 1.7rem;
+  font-size: 80%;
 }
 
 .image2{
@@ -393,7 +391,30 @@ ul {
 }
 
 /*========================================Responsive========================================*/
-@media(max-width: 767px) {
+@media(max-width: 1500px) {
+  .curvegame::before{
+    transform: translate(85%, 595%);
+  }
+  
+  .curvegame::after{
+    transform: translate(-4%, 581%);
+  }
+}
+
+@media(max-width: 945px) {
+  .onzesdgs{
+    height: auto;
+  }
+  .results{
+    margin-bottom: 10rem;
+  }
+  .curvegame::before{
+    transform: translate(85%, 550%);
+  }
+  
+  .curvegame::after{
+    transform: translate(-4%, 531%);
+  }
   .footer-col {
     width: 50%;
     margin-bottom: 3rem;

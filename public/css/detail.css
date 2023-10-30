@@ -20,76 +20,224 @@ body {
 .nav {
   background: #ededed;
   display: flex;
-  /* alles komt naast elkaar*/
   justify-content: space-between;
-  /* alles gaat naar een verschillende plek*/
   height: 10rem;
   align-items: center;
-  /* alles in de nav komt in het midden te staan*/
   color: #000000;
   font-size: 130%;
   padding: 4rem;
-  /* alles heeft dan 40px afstand*/
   text-transform: uppercase;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
 }
 
 .nav>a>img {
-  height: 8rem;
+  height: 40%;
+  width: 40%;
 }
 
-.my-image {
-  height: 3rem;
-  width: 20rem;
-}
-
-.list {
+/* detail.css */
+.sdg-container {
   display: flex;
-  list-style: none;
-  /* styling weg*/
-  gap: 4rem;
+  flex-direction: row; /* Display elements side by side */
+  align-items: center;
+  padding: 2rem;
 }
 
-.listitem {
-  padding-left: 50rem;
+.sdg-left {
+  flex: 1; /* Take up all available space on the left */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-/* Adicione isso ao seu arquivo CSS para estilizar a página de detalhes */
-
-.sdg-details {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
-
-.sdg-image {
-    max-width: 50%;
-    margin-right: 20px;
-}
-
-.sdg-info {
-    max-width: 50%;
+.sdg-right {
+  flex: 1; /* Take up all available space on the right */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 2rem;
 }
 
 .sdg-title {
-    font-size: 24px;
+  font-size: 5rem;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding-top: 4rem;
 }
 
-.sdg-sub-image {
-    max-width: 100%;
-    margin-top: 20px;
+.sdg-image2 {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 2rem;
 }
 
 .sdg-subtitle {
-    font-size: 20px;
-    margin-top: 10px;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  text-align: center;
 }
 
 .sdg-description {
-    font-size: 16px;
-    margin-top: 10px;
+  font-size: 2rem;
+  margin-bottom: 2rem;
 }
 
-/* Estilize a página de detalhes conforme suas necessidades */
+/*========================================GAME========================================*/
+
+.gametekst {
+  width: 50rem;
+  height: 30rem;
+  padding: 2rem;
+  background: #3a8cff;
+  border-radius: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.gameh1 {
+  display: flex;
+  justify-content: center;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.gameh2 {
+  font-size: small;
+  flex-direction: column;
+  color: white;
+  text-align: center;
+}
+
+.grotebutton {
+  width: 30rem;
+  height: 7rem;
+  padding: 1rem;
+  margin-top: 2rem;
+  font-size: 80%;
+  background: hsl(215, 100%, 50%);
+  border: none;
+  color: #eee;
+  border-radius: 4rem;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.grotebutton:hover{
+  background: hsl(215, 100%, 40%);
+  transition: 0.2s;
+}
+
+/*========================================Footer========================================*/
+
+.container {
+  max-width: 1170px;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+ul {
+  list-style: none;
+}
+
+.footer {
+  background-color: rgba(218, 218, 218, 0.5);
+  padding: 4rem 0;
+}
+
+.footer-col {
+  width: 25%;
+  padding: 0 1.5rem;
+}
+
+.footer-col h4 {
+  font-size: 1.8rem;
+  color: black;
+  text-transform: capitalize;
+  margin-bottom: 3.5rem;
+  font-weight: 500;
+}
+
+.footer-col ul li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  font-size: 1.6rem;
+  text-transform: capitalize;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 300;
+  color: #5c5c5c;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+  color: #000000;
+  padding-left: 0.8rem;
+}
+
+.footer-col p {
+  font-size: 1.3rem;
+  text-align: left;
+  margin-right: 2rem;
+}
+
+.footer-col .social-links a {
+  display: inline-block;
+  height: 4rem;
+  width: 4rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 0 1rem 1rem 0;
+  text-align: center;
+  line-height: 4rem;
+  border-radius: 50%;
+  color: black;
+  transition: all 0.5s ease;
+  border: 1px solid black;
+}
+
+.footer-col .social-links a:hover {
+  color: #24262b;
+  background-color: rgb(219, 217, 217);
+}
+
+/*========================================Responsive========================================*/
+@media(max-width: 1300px) {
+  .footer-col {
+    width: 50%;
+    margin-bottom: 3rem;
+  }
+  .sdg-container {
+    flex-direction: column;
+  }
+
+  .sdg-right {
+    padding: 2rem;
+  }
+
+  .sdg-image2 {
+    order: -1;
+  }
+
+  .sdg-subtitle {
+    margin-top: 2rem;
+  }
+}
+
+
+@media(max-width: 574px){
+  .footer-col{
+    width: 100%;
+  }
+}
+
 
