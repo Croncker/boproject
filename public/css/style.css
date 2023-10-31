@@ -411,9 +411,36 @@ ul {
   .curvegame::before{
     transform: translate(85%, 550%);
   }
-  
   .curvegame::after{
     transform: translate(-4%, 531%);
+  }
+  .game {
+    flex-direction: column;
+    align-items: center;
+  }
+  .gametekst {
+    order: 1;
+    z-index: 3;
+  }
+  .loader {
+    order: 2;
+    margin-top: 2rem; /* Adicione um espaçamento entre os elementos se desejar */
+  }
+  .information {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .image2 {
+    order: 1;
+    margin-bottom: 2rem; /* Adicione um espaçamento entre os elementos se desejar */
+    width: 80%;
+    height: 30%;
+    z-index: 3;
+  }
+
+  .informationtekst {
+    order: 2;
   }
   .footer-col {
     width: 50%;

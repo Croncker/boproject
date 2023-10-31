@@ -36,27 +36,17 @@ services:
       MYSQL_ROOT_PASSWORD: 4dy5qwtrsag#!sad
     volumes:
       - './docker/mysqldata:/var/lib/mysql'
-ports:
-  - 3309:3306
-volumes:
-  - '/docker/mysqldata:/var/lib/mysql'
-
-    # mailhog
-  mailhog:
-    image: mailhog/mailhog:latest
     ports:
-      - 1025:1025
-      - 8025:8025
-
-  # php myadmin in an external image
+      - 3309:3306
+ 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     environment:
       PMA_HOST: mariadb
       PMA_USER: root
-      PMA_PASSWORD: mijn_p@ss#
+      PMA_PASSWORD: 4dy5qwtrsag#!sad
     ports:
-      - "8088:80"
+      - 8088:80
 
 # Volumes
 volumes:
