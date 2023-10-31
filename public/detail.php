@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/704f604c3d.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/detail.css">
+    <link rel="stylesheet" href="css/detail2.css">
 </head>
 <body>
     <nav class="nav">
@@ -22,7 +23,7 @@ if (isset($_GET['id'])) {
 
     if (is_numeric($sdgIndex) && $sdgIndex >= 0 && $sdgIndex < count($sdgs)) {
         $single = $sdgs[$sdgIndex];
-        if ($sdgIndex >= 1 && $sdgIndex <= 10) {
+        if ($sdgIndex >= 0 && $sdgIndex <= 10) {
             include "../views/information.php";
         } else {
             include "../views/information2.php";
