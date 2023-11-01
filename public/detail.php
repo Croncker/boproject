@@ -17,24 +17,55 @@
     </nav>
 
     <?php
-include "data.php";
+include '../source/config.php';
+
 if (isset($_GET['id'])) {
     $sdgIndex = $_GET['id'];
 
-    if (is_numeric($sdgIndex) && $sdgIndex >= 0 && $sdgIndex < count($sdgs)) {
-        $single = $sdgs[$sdgIndex];
-        if ($sdgIndex >= 0 && $sdgIndex <= 10) {
-            include "../views/information.php";
+    // Crie uma conexão com o banco de dados usando as constantes definidas em config.php
+    $connection = new mysqli(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DATABASE);
+
+    // Verifique se há erros na conexão
+    if ($connection->connect_error) {
+        die("Erro na conexão com o banco de dados: " . $connection->connect_error);
+    }
+
+    if (is_numeric($sdgIndex) && $sdgIndex >= 0) {
+        $query = "SELECT * FROM sdg1 WHERE id = $sdgIndex";
+        $result = $connection->query($query);
+
+        if ($result) {
+            if ($row = $result->fetch_assoc()) {
+                $single = [
+                    "image" => $row["image"],
+                    "image2" => $row["image2"],
+                    "title" => $row["title"],
+                    "subtitle" => $row["subtitle"],
+                    "subtitle2" => $row["subtitle2"],
+                    "desc" => $row["desc"],
+                    "desc2" => $row["desc2"],
+                ];
+
+                if ($sdgIndex >= 0 && $sdgIndex <= 9) {
+                    include "../views/information.php";
+                } else {
+                    include "../views/information2.php";
+                }
+            } else {
+                echo "SDG com o ID especificado não foi encontrado no banco de dados.";
+            }
         } else {
-            include "../views/information2.php";
+            echo "Erro na consulta: " . $connection->error;
         }
     } else {
-        echo "ID of SDG is not valid.";
+        echo "ID do SDG não é válido.";
     }
+    $connection->close();
 } else {
-    echo "ID of SDG not found in URL.";
+    echo "ID do SDG não encontrado na URL.";
 }
 ?>
+
 </body>
 
 

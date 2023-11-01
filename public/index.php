@@ -9,7 +9,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/704f604c3d.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
-    <script src="script.js"></script>
 </head>
 <body>
     <nav class="nav">
@@ -19,24 +18,37 @@
     <section class="onzesdgs">
         <div class="sdgtekst">SDG's</div>
         <div id="results">
-            <?php
-            include 'data.php';
-            $selectedIndexes = array();
-        
-            while (count($selectedIndexes) < 3) {
-                $randomIndex = array_rand($sdgs);
-                if (!in_array($randomIndex, $selectedIndexes)) {
-                    $selectedIndexes[] = $randomIndex;
-                }
-            }
-            
-            foreach ($selectedIndexes as $index) {
-                $single = $sdgs[$index];
-                echo '<a href="detail.php?id=' . $index . '">';
-                include '../views/card.php';
-                echo '</a>';
-            }
-            ?>
+        <?php
+include '../source/config.php';
+
+$connection = new mysqli(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DATABASE);
+
+if ($connection->connect_error) {
+    die("Erro na conexão com o banco de dados: " . $connection->connect_error);
+}
+
+$query = "SELECT * FROM sdg1 ORDER BY RAND() LIMIT 3";
+$result = $connection->query($query);
+
+if ($result) {
+    while ($row = $result->fetch_assoc()) {
+        $single = [
+            "image" => $row["image"],
+            "title" => $row["title"],
+        ];
+
+        echo '<a href="detail.php?id=' . $row["id"] . '">';
+        include '../views/card.php';
+        echo '</a>';
+    }
+} else {
+    echo "Erro na consulta: " . $connection->error;
+}
+
+$connection->close();
+?>
+
+
         </div>
         <div class="curve"></div>
     </section>
