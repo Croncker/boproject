@@ -3,7 +3,7 @@ version: '3.5'
 # Services
 services:
 
-  # PHP FPM Service
+  # PHP FPM Service 
   php:
     build:
       dockerfile: ./docker/php/dockerfile

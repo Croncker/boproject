@@ -1,5 +1,5 @@
 <?php
-// In this document i'm define some constants that I want to use trough this whole project
+// In this document i'm define some constants that I want to use trough this whole project 
 
 /*Display all errors*/
 ini_set('display_errors', 1);
